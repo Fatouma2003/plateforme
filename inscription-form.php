@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -49,6 +50,24 @@
         <a href="https://web.facebook.com/profile.php?id=100092654574112 " class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/plateformedesjeunesyoussoufia/?next=%2F " class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/plateforme-des-jeunes-youssoufia-9187b62a0/ " class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="index.php?logout='1'">
+		                <button style="margin-left: 445px;" class="butt">
+		                 <span>
+		                  Sign Out
+		                 </span>
+		                </button>
+                        <?php 
+                    
+                            session_start(); 
+
+                            if (isset($_GET['logout'])) {
+                                session_destroy();
+                                unset($_SESSION['user_nom']);
+                                header("location: index.php");
+                            }
+           
+                          ?>
+		              </a>
       </div>
     </div>
   </section>
@@ -63,10 +82,10 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
-          <li><a class="nav-link scrollto" href="#about">À propos</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#team">Équipe</a></li>
+        <li><a class="nav-link scrollto active" href="index.php#hero">Accueil</a></li>
+          <li><a class="nav-link scrollto" href="index.php#about">À propos</a></li>
+          <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="index.php/#team">Équipe</a></li>
           <li class="dropdown"><a href="#"><span>Plateforme</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">CAEDEL</a></li>
@@ -81,7 +100,7 @@
               <li><a href="#">Galerie</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="index.html">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -152,6 +171,8 @@
         
         <label for="formulaire_pdf">Formulaire rempli (PDF) :</label>
         <input type="file" id="formulaire_pdf" name="formulaire_pdf" accept="application/pdf" required><br><br>
+        <label for="Engagement_pdf">Engagement</label>
+        <input type="file" id="engagement" name="engagement_pdf" accept="application/pdf">
         
         <button type="submit">Soumettre</button>
     </form>

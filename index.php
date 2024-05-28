@@ -51,6 +51,24 @@
         <a href="https://web.facebook.com/profile.php?id=100092654574112 " class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/plateformedesjeunesyoussoufia/?next=%2F " class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="https://www.linkedin.com/in/plateforme-des-jeunes-youssoufia-9187b62a0/ " class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="index.php?logout='1'">
+		                <button style="margin-left: 445px;" class="butt">
+		                 <span>
+		                  Sign Out
+		                 </span>
+		                </button>
+                    <?php 
+                    
+                    session_start(); 
+
+                      if (isset($_GET['logout'])) {
+                        session_destroy();
+                        unset($_SESSION['user_nom']);
+                        header("location: index.php");
+                      }
+           
+                    ?>
+		              </a>
       </div>
     </div>
   </section>
@@ -113,10 +131,10 @@
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <a href="sign-up">
+            <a href="inscription-form.php">
               <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon"><i class="bx bx-user"></i></div>
-                <h4 class="title"><a href="sign-up">Inscription</a></h4>
+                <h4 class="title"><a href="log_verification.php">Inscription</a></h4>
                 <p class="description">Inscrivez-vous dès maintenant pour profiter de tous les avantages offerts par notre plateforme !</p>
               </div>
             </a>
@@ -509,16 +527,16 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/aarandas.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://web.facebook.com/relkati/?_rdc=1&_rdr"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/rabiekati/"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
+                <h4>Rabie ELkati</h4>
                 <span>Chief Executive Officer</span>
               </div>
             </div>
@@ -545,16 +563,16 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/jason.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href="https://web.facebook.com/JasonStatham/?_rdc=1&_rdr"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/jasonstatham/"><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>William Anderson</h4>
+                <h4>Jason Statham</h4>
                 <span>CTO</span>
               </div>
             </div>
@@ -584,7 +602,7 @@
     </section><!-- End Team Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <!-- <section id="pricing" class="pricing">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -667,7 +685,7 @@
         </div>
 
       </div>
-    </section><!-- End Pricing Section -->
+    </section>End Pricing Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
